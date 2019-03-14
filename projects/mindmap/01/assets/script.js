@@ -21,6 +21,7 @@ $(document).ready(function() {
 
 	$("#note-welcome").show();
 
+
 	$("#map svg a").click(function() {
 		var thisHREF = $(this).attr("href");
 		$("#notes article").hide();
