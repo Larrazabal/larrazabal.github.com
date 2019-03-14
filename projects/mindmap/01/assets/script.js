@@ -22,10 +22,15 @@ $(document).ready(function() {
 	$("#note-welcome").show();
 
 
-	$("#map svg a").click(function() {
-		var thisHREF = $(this).attr("href");
+	$("#map svg text").click(function() {
+		var thisLink = $(this).attr("data-click");
+
 		$("#notes article").hide();
-		$(thisHREF).show();
+		$(thisLink).show();
+
+		$("#map svg text").removeClass("selected-object");
+		$(this).addClass("selected-object");
+
 		return false;
 	});
 

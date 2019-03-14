@@ -26,6 +26,11 @@ body {
 .map svg {
 	width: 1300px;
 }
+svg text:hover,
+svg text:focus,
+.selected-object {
+	fill: #F06;
+}
 
 .notes {
 	width: 35%;
