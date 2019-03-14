@@ -4,6 +4,9 @@ $(document).ready(function() {
 	var winWidth;
 	var winHeight;
 
+	// Map scroll to center
+	scrollTop: $("#map").offset().top + $("#map").height() / 2;
+
 	// Header On Load
 	function checkSize() {
 		winWidth = $window.width();
@@ -15,7 +18,6 @@ $(document).ready(function() {
 	checkSize();
 
 	$(window).resize(checkSize);
-
 
 /*	DRAG TO SCROLL (BUGGED)
 
