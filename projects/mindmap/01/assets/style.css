@@ -13,11 +13,23 @@ body {
 	background: #fdfdfd;
 	color: #2d2d2d;
 	text-align: center;
-	font-family: "Source Sans Pro", Sans-Serif;
+	font-family: Consolas, Monospace;
 }
 
-
-
+.map {
+	height: 100%;
+	width: 70%;
+	float: left;
+	overflow: scroll;
+	cursor: grab;
+}
+.map svg {
+	width: 1300px;
+}
+.notes {
+	width: 30%;
+	float: left;
+}
 
 
 .clearfix{clear:both!important;}
