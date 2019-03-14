@@ -5,7 +5,6 @@ $(document).ready(function() {
 	var winHeight;
 
 	// Map scroll to center
-	scrollTop: $("#map").offset().top + $("#map").height() / 2;
 
 	// Header On Load
 	function checkSize() {
@@ -19,6 +18,15 @@ $(document).ready(function() {
 	checkSize();
 
 	$(window).resize(checkSize);
+
+	$("#note-welcome").show();
+
+	$("#map svg a").click(function() {
+		var thisHREF = $(this).attr("href");
+		$("#notes article").hide();
+		$(thisHREF).show();
+		return false;
+	});
 
 /*	DRAG TO SCROLL (BUGGED)
 

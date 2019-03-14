@@ -3,49 +3,48 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#231F20;stroke-miterlimit:10;}
+	.st0{fill:#FFFFFF;}
 	.st1{fill:#232323;}
-	.st2{fill:#FFFFFF;}
-	.st3{font-family:'Garamond';}
-	.st4{font-size:75px;}
-	.st5{fill:none;stroke:#232323;stroke-width:5;stroke-miterlimit:10;}
-	.st6{font-size:50px;}
+	.st2{font-family:'Garamond';}
+	.st3{font-size:75px;}
+	.st4{fill:none;stroke:#232323;stroke-width:5;stroke-miterlimit:10;}
+	.st5{font-size:50px;}
 </style>
 <g id="Background">
 	<rect class="st0" width="2000" height="2000"/>
 </g>
 <g id="Layer_2">
 	<rect x="810" y="910" class="st1" width="380" height="180"/>
-	<text transform="matrix(1 0 0 1 853.5337 1019.0447)" class="st2 st3 st4">Main Idea</text>
-	<line class="st5" x1="1186.64" y1="967.64" x2="1361.64" y2="797.18"/>
-	<line class="st5" x1="811.36" y1="1002.99" x2="567.91" y2="589.35"/>
-	<line class="st5" x1="987.93" y1="1084.93" x2="633.96" y2="1371.18"/>
+	<text transform="matrix(1 0 0 1 864.8452 1020.0447)" class="st0 st2 st3">Welcome</text>
+	<line class="st4" x1="1186.64" y1="967.64" x2="1361.64" y2="797.18"/>
+	<line class="st4" x1="811.36" y1="1002.99" x2="567.91" y2="589.35"/>
+	<line class="st4" x1="987.93" y1="1084.93" x2="660.07" y2="1199.82"/>
 	<rect x="407.81" y="480.28" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 465.7899 550.4414)" class="st2 st3 st6">Sub Idea 1</text>
-	<rect x="472.87" y="1362.1" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 530.8483 1432.2529)" class="st2 st3 st6">Sub Idea 3</text>
+	<text transform="matrix(1 0 0 1 500.7836 551.4414)" class="st0 st2 st5">Images</text>
+	<rect x="360.58" y="1175.37" class="st1" width="322.18" height="114.92"/>
+	<text transform="matrix(1 0 0 1 471.5227 1246.5264)" class="st0 st2 st5">Math</text>
 	<rect x="1222.91" y="682.25" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 1280.885 752.4059)" class="st2 st3 st6">Sub Idea 2</text>
-	<line class="st5" x1="625.75" y1="1477.02" x2="382.57" y2="1625.34"/>
-	<line class="st5" x1="633.96" y1="1477.02" x2="789.96" y2="1600.34"/>
-	<rect x="206.19" y="1620.63" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 269.116 1690.7841)" class="st2 st3 st6">Sub Sub 5</text>
-	<rect x="723.47" y="1592.63" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 786.3887 1662.7841)" class="st2 st3 st6">Sub Sub 6</text>
-	<rect x="1259.52" y="1408.58" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 1322.4385 1478.7351)" class="st2 st3 st6">Sub Sub 7</text>
-	<rect x="178.32" y="164.8" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 241.2422 234.9561)" class="st2 st3 st6">Sub Sub 1</text>
-	<rect x="1497.99" y="363.36" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 1560.9089 433.5192)" class="st2 st3 st6">Sub Sub 3</text>
-	<rect x="692.44" y="190.19" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 755.3647 260.3492)" class="st2 st3 st6">Sub Sub 2</text>
-	<rect x="1528.54" y="980.02" class="st1" width="322.18" height="114.92"/>
-	<text transform="matrix(1 0 0 1 1591.4673 1050.1752)" class="st2 st3 st6">Sub Sub 4</text>
-	<line class="st5" x1="795.05" y1="1419.56" x2="1259.52" y2="1466.04"/>
-	<line class="st5" x1="560.09" y1="480.28" x2="339.41" y2="273.47"/>
-	<line class="st5" x1="559.09" y1="482.28" x2="761.05" y2="294.42"/>
-	<line class="st5" x1="1457.82" y1="797.17" x2="1676" y2="980.02"/>
-	<line class="st5" x1="1544.09" y1="737.71" x2="1663.7" y2="470.7"/>
+	<text transform="matrix(1 0 0 1 1321.3474 753.406)" class="st0 st2 st5">Tables</text>
+	<line class="st4" x1="525.64" y1="1281.91" x2="414.27" y2="1632.14"/>
+	<line class="st4" x1="520.64" y1="1277.09" x2="933.36" y2="1634.14"/>
+	<rect x="262.27" y="1632.14" class="st1" width="322.18" height="114.92"/>
+	<text transform="matrix(1 0 0 1 331.0257 1703.2998)" class="st0 st2 st5">Sub Sub 5</text>
+	<rect x="772.27" y="1622.21" class="st1" width="322.18" height="114.92"/>
+	<text transform="matrix(1 0 0 1 841.0232 1693.3634)" class="st0 st2 st5">Sub Sub 6</text>
+	<rect x="1190" y="1469" class="st1" width="322.18" height="114.92"/>
+	<text transform="matrix(1 0 0 1 1258.7534 1540.1566)" class="st0 st2 st5">Sub Sub 7</text>
+	<rect x="173.32" y="173.8" class="st1" width="322.18" height="114.92"/>
+	<text transform="matrix(1 0 0 1 242.0732 244.9561)" class="st0 st2 st5">Sub Sub 1</text>
+	<rect x="1506.99" y="376.36" class="st1" width="322.18" height="114.92"/>
+	<text transform="matrix(1 0 0 1 1575.74 447.5192)" class="st0 st2 st5">Sub Sub 3</text>
+	<rect x="695.44" y="192.19" class="st1" width="322.18" height="114.92"/>
+	<text transform="matrix(1 0 0 1 764.1957 263.3492)" class="st0 st2 st5">Sub Sub 2</text>
+	<rect x="1527.54" y="953.02" class="st1" width="322.18" height="114.92"/>
+	<text transform="matrix(1 0 0 1 1596.2983 1024.1752)" class="st0 st2 st5">Sub Sub 4</text>
+	<line class="st4" x1="545.64" y1="1283.91" x2="1190" y2="1526.46"/>
+	<line class="st4" x1="555.09" y1="489.28" x2="334.41" y2="282.47"/>
+	<line class="st4" x1="562.09" y1="484.28" x2="764.05" y2="296.42"/>
+	<line class="st4" x1="1531" y1="743.27" x2="1675" y2="953.02"/>
+	<line class="st4" x1="1537.54" y1="733.27" x2="1672.7" y2="483.7"/>
 </g>
 </svg>

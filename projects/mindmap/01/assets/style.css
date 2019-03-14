@@ -30,12 +30,14 @@ body {
 .notes {
 	width: 35%;
 	float: left;
+	overflow-y: scroll;
 }
 .notes article {
 	text-align: left;
 	padding: 1em;
 	line-height: 1.5;
 	font-size: 1.25em;
+	display: none;
 }
 .notes h2 {
 	font-size: 1.5em;
@@ -57,7 +59,7 @@ body {
 	list-style: number;
 }
 .notes li {
-	
+
 }
 
 
