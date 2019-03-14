@@ -19,7 +19,8 @@ $(document).ready(function() {
 
 	$(window).resize(checkSize);
 
-	$("#note-welcome").show();
+	$(".main-object").addClass("selected-object");
+	$(".main-article").show();
 
 
 	$("#map svg text").click(function() {
