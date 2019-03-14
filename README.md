@@ -1,3 +1,3 @@
-# Larrazabal (dot) GitHub (dot) Commercial
+# larrazabal.github.io
 
-My GitHub Web Page
+GitHub Webpage
