@@ -21,14 +21,16 @@ body {
 	width: 65%;
 	float: left;
 	overflow: scroll;
-	cursor: grab;
 }
 .map svg {
 	width: 1300px;
 }
-svg text:hover,
-svg text:focus,
-.selected-object {
+.map svg text {
+	cursor: pointer;
+}
+.map svg text:hover,
+.map svg text:focus,
+.map svg .selected-object {
 	fill: #F06;
 }
 
