@@ -37,24 +37,27 @@ body {
 	line-height: 1.5;
 	font-size: 1.25em;
 }
-.notes article h2 {
+.notes h2 {
 	font-size: 1.5em;
 }
-.notes article p,
-.notes article ul,
-.notes article ol {
+.notes p,
+.notes ul,
+.notes ol {
 	margin-top: 1em;
 	text-align: left;
 }
-.notes article strong {
+.notes strong {
 	font-weight: 700;
 }
-.notes article ul {
+.notes ul {
 	list-style: disc;
 	margin-left: 2em;
 }
-.notes article ol {
+.notes ol {
 	list-style: number;
+}
+.notes li {
+	
 }
 
 

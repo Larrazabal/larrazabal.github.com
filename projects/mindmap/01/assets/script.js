@@ -13,6 +13,7 @@ $(document).ready(function() {
 		winHeight = $window.height();
 
 		$("#map").css("height", winHeight);
+		$("#notes").css("height", winHeight);
 	}
 
 	checkSize();
