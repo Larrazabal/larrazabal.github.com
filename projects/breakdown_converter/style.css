@@ -49,16 +49,12 @@ h1 {
 	width: 500px;
 	margin: 2em auto 0;
 	border: 1px solid #9f9f9f;
-	padding: 1em;
+	padding: 1em 2em;
 	border-radius: 10px;
 }
 .options input[type="checkbox"] {
 	position: relative;
 	top: .175em;
-}
-.options-wrap {
-	width: 250px;
-	margin: 0 auto;
 }
 .remove-dollar,
 .convert-percentages {
@@ -88,6 +84,16 @@ h1 {
 }
 .convert:hover {
 	background: #4f4f4f;
+}
+.output-container {
+	margin-top: 2em;
+	display: none;
+}
+.output {
+	width: 100%;
+}
+.output td {
+	border: 1px solid #9f9f9f;
 }
 
 
