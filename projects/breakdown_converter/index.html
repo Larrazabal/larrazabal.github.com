@@ -17,15 +17,20 @@
 				<textarea name="input" class="input" autofocus></textarea>
 			</div>
 			<div class="options">
-				<div class="breakpoint">
-					<label for="breakpoint-input">Breakpoint:</label>
-					<input type="number" value="2" min="2" max="99" class="breakpoint-input" name="breakpoint-input" id="breakpoint-input">
+				<div class="options-wrap">
+					<div class="breakpoint">
+						<label for="breakpoint-input">Breakpoint:</label>
+						<input type="number" value="2" min="2" max="99" class="breakpoint-input" name="breakpoint-input" id="breakpoint-input">
+					</div>
+					<div class="remove-dollar">
+						<input type="checkbox" class="remove-dollar-input" name="remove-dollar-input" id="remove-dollar-input">
+						<label for="remove-dollar-input">Remove dollars ($)</label>
+					</div>
+					<div class="convert-percentages">
+						<input type="checkbox" class="convert-percentages-input" name="convert-percentages-input" id="convert-percentages-input">
+						<label for="convert-percentages-input">Convert Percentages</label>
+					</div>
 				</div>
-				<div class="remove-dollar">
-					<input type="checkbox" class="remove-dollar-input" name="remove-dollar-input" id="remove-dollar-input">
-					<label for="remove-dollar-input">Remove $</label>
-				</div>
-				<div class="convert-percentage"></div>
 			</div>
 			<div class="convert-container">
 				<a href="#" class="convert">Convert</a>
