@@ -52,13 +52,17 @@ h1 {
 	padding: 1em;
 	border-radius: 10px;
 }
+.options input[type="checkbox"] {
+	position: relative;
+	top: .175em;
+}
 .options-wrap {
 	width: 250px;
 	margin: 0 auto;
 }
 .remove-dollar,
 .convert-percentages {
-	margin-top: 1em;
+	margin: .75em 0;
 }
 .breakpoint-input {
 	border: 1px solid #9f9f9f;
