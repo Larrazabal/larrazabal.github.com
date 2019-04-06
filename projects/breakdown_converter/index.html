@@ -2,20 +2,37 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Breakdown Converter</title>
+		<title>Facebook Breakdown Regex Converter</title>
 		<link rel="stylesheet" href="style.css">
 		<meta name="description" content="Breakdown Converter For Facebook">
 		<meta name="viewport" content="width=device-width">
 	</head>
 	<body>
-		<div class="input-container">
-			
-		</div>
-		<div class="options">
-			
-		</div>
-		<div class="output-container">
-			
+		<div class="all-container">
+			<header class="main-header">
+				<h1>Facebook Breakdown Regex Converter</h1>
+				<p>Enrique de Larraz&aacute;bal</p>
+			</header>
+			<div class="input-container">
+				<textarea name="input" class="input" autofocus></textarea>
+			</div>
+			<div class="options">
+				<div class="breakpoint">
+					<label for="breakpoint-input">Breakpoint:</label>
+					<input type="number" value="2" min="2" max="99" class="breakpoint-input" name="breakpoint-input" id="breakpoint-input">
+				</div>
+				<div class="remove-dollar">
+					<input type="checkbox" class="remove-dollar-input" name="remove-dollar-input" id="remove-dollar-input">
+					<label for="remove-dollar-input">Remove $</label>
+				</div>
+				<div class="convert-percentage"></div>
+			</div>
+			<div class="convert-container">
+				<a href="#" class="convert">Convert</a>
+			</div>
+			<div class="output-container">
+				
+			</div>
 		</div>
 		<script src="source.js"></script>
 		<script src="script.js"></script>
