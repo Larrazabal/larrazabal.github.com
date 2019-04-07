@@ -29,22 +29,20 @@ $(document).ready(function() {
 		} else {
 
 			// Create <tr> for every AOG/BP
-			for (var rn = 1; rn <= (AOG.length/BP); rn++) {
+/*			for (var rn = 1; rn <= (AOG.length/BP); rn++) {
 				$(".output tbody").append("<tr class='tr-" + rn + "'>");
-			}
+			}*/
 
-			// Divide AOG into BP chunks
-			CAOG = chunkArray(AOG, BP);
-			console.log(CAOG);
+			for (var i = 0; i < AOG.length; i++) {
+				$(".output tbody").append("<td>" + AOG[i] + "</td>");
+			}
 
 			// Every CAOG[x] into corresponding <tr class="tr-[x+1]">
-			for (var x = 0; x <= CAOG.length; x++) {
+/*			for (var x = 0; x <= CAOG.length + 1; x++) {
 				currn = x + 1;
-				for (; ; i) {
-				}
+				console.log(AOG)
 			}
-				//$(".tr-" + currn + " td");
-
+*/
 			// Show Output
 			$(".output-container").show();
 
