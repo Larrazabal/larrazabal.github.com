@@ -22,11 +22,11 @@ $(document).ready(function() {
 		$(".output tbody *").remove();
 
 		// Make sure that AOG can be divided by BP
-		if (AOG.length % BP !== 0) {
+/*		if (AOG.length % BP !== 0) {
 
 			alert("Input does not match column count.");
 
-		} else {
+		} else {*/
 
 			// Create <tr> for every AOG/BP
 /*			for (var rn = 1; rn <= (AOG.length/BP); rn++) {
@@ -46,7 +46,7 @@ $(document).ready(function() {
 			// Show Output
 			$(".output-container").show();
 
-		}
+		//}
 
 		// Stop Page Transfer
 		return false;
