@@ -25,30 +25,35 @@ $(document).ready(function() {
 		// Store Breakpoint
 		var BP = $(".breakpoint-input").val();
 
-		// Clear Table
-		$(".output tbody *").remove();
+		// Check if AOG.length is divisible by BP
+		if (AOG.length % BP) {
+			alert("Input does not match column count");
+		} else {
+			// Clear Table
+			$(".output tbody *").remove();
 
-		// Create variable for HTML data to be added
-		var HTMLDATA;
+			// Create variable for HTML data to be added
+			var HTMLDATA;
 
-		// Set z for current AOG item in loop
-		var z = 0;
+			// Set z for current AOG item in loop
+			var z = 0;
 
-		for (var x = 1; x <= AOG.length/BP; x++) {
-			HTMLDATA = HTMLDATA + "<tr>";
-			for (var y = 1; y <= BP; y++) {
-				HTMLDATA = HTMLDATA + "<td>" + AOG[z] + "</td>";
-				z = z + 1;
+			for (var x = 1; x <= AOG.length/BP; x++) {
+				HTMLDATA = HTMLDATA + "<tr>";
+				for (var y = 1; y <= BP; y++) {
+					HTMLDATA = HTMLDATA + "<td>" + AOG[z] + "</td>";
+					z = z + 1;
+				}
+				HTMLDATA = HTMLDATA + "</tr>";
 			}
-			HTMLDATA = HTMLDATA + "</tr>";
+
+			// Add HTML data to table
+			$(".output tbody").append(HTMLDATA);
+			console.log(HTMLDATA);
+
+			// Show Output
+			$(".output-container").show();
 		}
-
-		// Add HTML data to table
-		$(".output tbody").append(HTMLDATA);
-		console.log(HTMLDATA);
-
-		// Show Output
-		$(".output-container").show();
 
 		// Stop Page Transfer
 		return false;
