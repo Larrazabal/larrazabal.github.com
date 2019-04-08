@@ -10,6 +10,11 @@ $(document).ready(function() {
 			OG = OG.split("$").join("");
 		}
 
+		// Check if to convert percentages (%)
+		if ($(".convert-percentages-input").prop("checked") == true) {
+			OG = OG.split("%").join("");
+		}
+
 		// Convert OG to array AOG
 		var AOG = OG.split("\n");
 
