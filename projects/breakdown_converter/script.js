@@ -5,6 +5,11 @@ $(document).ready(function() {
 		// Store text from input
 		var OG = $(".input").val();
 
+		// Check of to remove dollar ($)
+		if ($(".remove-dollar-input").prop("checked") == true) {
+			OG = OG.split("$").join("");
+		}
+
 		// Convert OG to array AOG
 		var AOG = OG.split("\n");
 
@@ -21,32 +26,12 @@ $(document).ready(function() {
 		// Clear Table
 		$(".output tbody *").remove();
 
-		// Make sure that AOG can be divided by BP
-/*		if (AOG.length % BP !== 0) {
+		for (var i = 0; i < AOG.length; i++) {
+			$(".output tbody").append("<td>" + AOG[i] + "</td>");
+		}
 
-			alert("Input does not match column count.");
-
-		} else {*/
-
-			// Create <tr> for every AOG/BP
-/*			for (var rn = 1; rn <= (AOG.length/BP); rn++) {
-				$(".output tbody").append("<tr class='tr-" + rn + "'>");
-			}*/
-
-			for (var i = 0; i < AOG.length; i++) {
-				$(".output tbody").append("<td>" + AOG[i] + "</td>");
-			}
-
-			// Every CAOG[x] into corresponding <tr class="tr-[x+1]">
-/*			for (var x = 0; x <= CAOG.length + 1; x++) {
-				currn = x + 1;
-				console.log(AOG)
-			}
-*/
 			// Show Output
 			$(".output-container").show();
-
-		//}
 
 		// Stop Page Transfer
 		return false;
