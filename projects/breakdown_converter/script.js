@@ -11,9 +11,6 @@ $(document).ready(function() {
 		}
 
 		// Check if to convert percentages (%)
-		if ($(".convert-percentages-input").prop("checked") == true) {
-			OG = OG.split("%").join("");
-		}
 
 		// Convert OG to array AOG
 		var AOG = OG.split("\n");
@@ -31,12 +28,27 @@ $(document).ready(function() {
 		// Clear Table
 		$(".output tbody *").remove();
 
-		for (var i = 0; i < AOG.length; i++) {
-			$(".output tbody").append("<td>" + AOG[i] + "</td>");
+		// Create variable for HTML data to be added
+		var HTMLDATA;
+
+		// Set z for current AOG item in loop
+		var z = 0;
+
+		for (var x = 1; x <= AOG.length/BP; x++) {
+			HTMLDATA = HTMLDATA + "<tr>";
+			for (var y = 1; y <= BP; y++) {
+				HTMLDATA = HTMLDATA + "<td>" + AOG[z] + "</td>";
+				z = z + 1;
+			}
+			HTMLDATA = HTMLDATA + "</tr>";
 		}
 
-			// Show Output
-			$(".output-container").show();
+		// Add HTML data to table
+		$(".output tbody").append(HTMLDATA);
+		console.log(HTMLDATA);
+
+		// Show Output
+		$(".output-container").show();
 
 		// Stop Page Transfer
 		return false;
