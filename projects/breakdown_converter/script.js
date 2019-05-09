@@ -28,8 +28,8 @@ $(document).ready(function() {
 		// Check if AOG.length is divisible by BP
 		if (AOG.length % BP) {
 			alert("Input does not match column count");
-		} else {
 			// Clear Table
+		} else {
 			$(".output tbody *").remove();
 
 			// Create variable for HTML data to be added
@@ -41,15 +41,21 @@ $(document).ready(function() {
 			for (var x = 1; x <= AOG.length/BP; x++) {
 				HTMLDATA = HTMLDATA + "<tr>";
 				for (var y = 1; y <= BP; y++) {
-					HTMLDATA = HTMLDATA + "<td>" + AOG[z] + "</td>";
+					if ($(".convert-total-results").prop("checked")) {
+						if (z%2 == 0) {
+							HTMLDATA = HTMLDATA + "<td>" + AOG[z] + "</td>";
+						}
+					} else {
+						HTMLDATA = HTMLDATA + "<td>" + AOG[z] + "</td>";
+					}
 					z = z + 1;
+					console.log(z%2);
 				}
 				HTMLDATA = HTMLDATA + "</tr>";
 			}
 
 			// Add HTML data to table
 			$(".output tbody").append(HTMLDATA);
-			console.log(HTMLDATA);
 
 			// Show Output
 			$(".output-container").show();
@@ -61,17 +67,3 @@ $(document).ready(function() {
 	});
 
 });
-
-function chunkArray(myArray, chunk_size){
-	var index = 0;
-	var arrayLength = myArray.length;
-	var tempArray = [];
-	
-	for (index = 0; index < arrayLength; index += chunk_size) {
-		myChunk = myArray.slice(index, index+chunk_size);
-		// Do something if you want with the group
-		tempArray.push(myChunk);
-	}
-
-	return tempArray;
-}
