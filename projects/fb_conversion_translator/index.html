@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Facebook Data To Table Regex Converter</title>
+		<link rel="stylesheet" href="style.css">
+		<meta name="description" content="Breakdown Converter For Facebook">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<div class="all-container">
+			<header class="main-header">
+				<h1>Facebook Conversion Translator</h1>
+				<p>Enrique de Larraz&aacute;bal</p>
+			</header>
+			<div class="input-container">
+				<textarea name="input" class="input" autofocus></textarea>
+			</div>
+			<div class="options">
+				<div class="options-wrap">
+					<div class="column-container column-container-1">
+						<label for="column-1">Column 1:</label>
+						<select class="column-1" name="column-1" id="column-1">
+							<option value="imp">Impressions</option>
+							<option value="clicks">Outbound Clicks</option>
+							<option value="lpv">Landing Page Views</option>
+							<option value="atc">Adds to Cart</option>
+							<option value="ic">Initiate Checkouts</option>
+							<option value="pur">Purchases</option>
+						</select>
+					</div>
+					<div class="column-container column-container-2">
+						<label for="column-2">Column 2:</label>
+						<select class="column-2" name="column-2" id="column-2">
+							<option value="imp">Impressions</option>
+							<option value="clicks">Outbound Clicks</option>
+							<option value="lpv">Landing Page Views</option>
+							<option value="atc">Adds to Cart</option>
+							<option value="ic">Initiate Checkouts</option>
+							<option value="pur">Purchases</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="convert-container">
+				<a href="#" class="convert">Convert</a>
+			</div>
+			<div class="output-container">
+				<table class="output">
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="source.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
