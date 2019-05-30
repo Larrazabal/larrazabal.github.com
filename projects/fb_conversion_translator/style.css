@@ -25,6 +25,13 @@ h1 {
 	font-size: 2em;
 	font-weight: 700;
 }
+
+h2 {
+	font-size: 1.5em;
+	font-weight: 700;
+	text-align: center;
+	margin: .5em 0 1.5em;
+}
 .main-header p {
 	font-size: 1.25em;
 	margin-top: .75em;
@@ -99,6 +106,24 @@ h1 {
 
 .column-container {
 	margin: 1em 0;
+}
+.options-options {
+	text-align: center;
+	font-size: 1.25em;
+}
+.options-options a {
+	color: #36f;
+	display: block;
+	float: left;
+	text-decoration: none;
+	padding: 1em;
+	border: 2px solid transparent;
+}
+.options-options a:hover {
+	border: 2px solid #36f;
+}
+.metric-options-options a {
+	width: 33.33%;
 }
 
 

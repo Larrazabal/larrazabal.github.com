@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Facebook Data To Table Regex Converter</title>
+		<title>Facebook Conversion Translator</title>
 		<link rel="stylesheet" href="style.css">
 		<meta name="description" content="Breakdown Converter For Facebook">
 		<meta name="viewport" content="width=device-width">
@@ -17,62 +17,101 @@
 				<textarea name="input" class="input" autofocus></textarea>
 			</div>
 			<div class="options">
+				<header>
+					<h2>Metrics</h2>
+				</header>
+				<div class="options-wrap metric-options">
+					<div class="inside">
+						<div class="column-container column-container-1">
+							<label for="column-1">Column 1:</label>
+							<select class="col column-1" name="column-1" id="column-1">
+							</select>
+						</div>
+						<div class="column-container column-container-2">
+							<label for="column-2">Column 2:</label>
+							<select class="col column-2" name="column-2" id="column-2">
+							</select>
+						</div>
+						<div class="column-container column-container-3">
+							<label for="column-3">Column 3:</label>
+							<select class="col column-3" name="column-3" id="column-3">
+							</select>
+						</div>
+						<div class="column-container column-container-4">
+							<label for="column-4">Column 4:</label>
+							<select class="col column-4" name="column-4" id="column-4">
+							</select>
+						</div>
+						<div class="column-container column-container-5">
+							<label for="column-5">Column 5:</label>
+							<select class="col column-5" name="column-5" id="column-5">
+							</select>
+						</div>
+						<div class="column-container column-container-6">
+							<label for="column-6">Column 6:</label>
+							<select class="col column-6" name="column-6" id="column-6">
+							</select>
+						</div>
+						<div class="column-container column-container-7">
+							<label for="column-7">Column 7:</label>
+							<select class="col column-7" name="column-7" id="column-7">
+							</select>
+						</div>
+						<div class="column-container column-container-8">
+							<label for="column-8">Column 8:</label>
+							<select class="col column-8" name="column-8" id="column-8">
+							</select>
+						</div>
+						<div class="column-container column-container-9">
+							<label for="column-9">Column 9:</label>
+							<select class="col column-9" name="column-9" id="column-9">
+							</select>
+						</div>
+						<div class="column-container column-container-10">
+							<label for="column-10">Column 10:</label>
+							<select class="col column-10" name="column-10" id="column-10">
+							</select>
+						</div>
+						<div class="column-container column-container-11">
+							<label for="column-11">Column 11:</label>
+							<select class="col column-11" name="column-11" id="column-11">
+							</select>
+						</div>
+					</div>
+					<nav class="options-options metric-options-options">
+						<a href="#" id="metric-add">Add</a>
+						<a href="#" id="metric-remove">Remove</a>
+						<a href="#" id="metric-defaults">Defaults</a>
+						<div class="clearfix"></div>
+					</nav>
+				</div>
+			</div>
+			<div class="options">
+				<header>
+					<h2>Conversions</h2>
+				</header>
 				<div class="options-wrap">
-					<div class="column-container column-container-1">
-						<label for="column-1">Column 1:</label>
-						<select class="col column-1" name="column-1" id="column-1">
-							<option value="imp">Impressions</option>
-							<option value="clicks">Outbound Clicks</option>
-							<option value="lpv">Landing Page Views</option>
-							<option value="atc">Adds to Cart</option>
-							<option value="ic">Initiate Checkouts</option>
-							<option value="pur">Purchases</option>
-						</select>
-					</div>
-					<div class="column-container column-container-2">
-						<label for="column-2">Column 2:</label>
-						<select class="col column-2" name="column-2" id="column-2">
-							<option value="imp">Impressions</option>
-							<option value="clicks">Outbound Clicks</option>
-							<option value="lpv">Landing Page Views</option>
-							<option value="atc">Adds to Cart</option>
-							<option value="ic">Initiate Checkouts</option>
-							<option value="pur">Purchases</option>
-						</select>
-					</div>
-					<div class="column-container column-container-3">
-						<label for="column-3">Column 3:</label>
-						<select class="col column-3" name="column-3" id="column-3">
-							<option value="imp">Impressions</option>
-							<option value="clicks">Outbound Clicks</option>
-							<option value="lpv">Landing Page Views</option>
-							<option value="atc">Adds to Cart</option>
-							<option value="ic">Initiate Checkouts</option>
-							<option value="pur">Purchases</option>
-						</select>
-					</div>
-					<div class="column-container column-container-4">
-						<label for="column-4">Column 4:</label>
-						<select class="col column-4" name="column-4" id="column-4">
-							<option value="imp">Impressions</option>
-							<option value="clicks">Outbound Clicks</option>
-							<option value="lpv">Landing Page Views</option>
-							<option value="atc">Adds to Cart</option>
-							<option value="ic">Initiate Checkouts</option>
-							<option value="pur">Purchases</option>
-						</select>
-					</div>
-					<div class="column-container column-container-5">
-						<label for="column-5">Column 5:</label>
-						<select class="col column-5" name="column-5" id="column-5">
-							<option value="imp">Impressions</option>
-							<option value="clicks">Outbound Clicks</option>
-							<option value="lpv">Landing Page Views</option>
-							<option value="atc">Adds to Cart</option>
-							<option value="ic">Initiate Checkouts</option>
-							<option value="pur">Purchases</option>
-						</select>
-					</div>
+					<div class="inside"></div>
+					<nav class="options-options metric-options-options">
+						<a href="#" id="metric-add">Add</a>
+						<a href="#" id="metric-remove">Remove</a>
+						<a href="#" id="metric-defaults">Defaults</a>
+						<div class="clearfix"></div>
+					</nav>
+				</div>
+			</div>
+			<div class="options">
+				<header>
+					<h2>Show Values</h2>
+				</header>
+				<div class="options-wrap">
+					<div class="inside"></div>
+					<nav class="options-options metric-options-options">
+						<a href="#" id="metric-add">Add</a>
+						<a href="#" id="metric-remove">Remove</a>
+						<a href="#" id="metric-defaults">Defaults</a>
+						<div class="clearfix"></div>
+					</nav>
 				</div>
 			</div>
 			<div class="convert-container">
