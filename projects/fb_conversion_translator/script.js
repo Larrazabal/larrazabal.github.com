@@ -5,10 +5,11 @@ $(document).ready(function() {
 					 	"Impressions",
 					 	"Outbound Clicks",
 					 	"Landing Page Views",
+					 	"View Content",
 					 	"Adds to Cart",
 					 	"Initiate Checkouts",
-					 	"Purchases",
 					 	"Purchase Information",
+					 	"Purchases",
 					 	"CPM",
 					 	"Purchase Conversion",
 					 	"Amount Spent",
@@ -18,16 +19,21 @@ $(document).ready(function() {
 					 	"imp",
 					 	"click",
 					 	"lpv",
+					 	"vc",
 					 	"atc",
 					 	"ic",
-					 	"pur",
 					 	"pi",
+					 	"pur",
 					 	"cpm",
 					 	"purconv",
 					 	"spent",
 					 	"roas"
 					 ];
+
+	addColumnSelection(12);
 	addSelections();
+	resetMetrics();
+
 	function addSelections() {
 		for (var i = 0; i <= selections.length - 1; i++) {
 			$(".col").append("<option value='" + selection_values[i] + "'>" + selections[i] + "</option>");
@@ -43,6 +49,9 @@ $(document).ready(function() {
 				"</div>");
 		}
 	}
+	function resetMetrics() {
+
+	}
 	/* ===== End Dropdown Selection ===== */
 
 
@@ -55,8 +64,9 @@ $(document).ready(function() {
 	});
 	$("#metric-defaults").click(function() {
 		$(".metric-options .inside").empty();
-		addColumnSelection(13);
+		addColumnSelection(12);
 		addSelections();
+		resetMetrics();
 
 		return false;
 	});
