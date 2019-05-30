@@ -1,20 +1,6 @@
 $(document).ready(function() {
 
-	/* START ========================================= */
-	// Metrics Load
-	addColumnSelection(12);
-	addSelections();
-	resetMetrics();
-
-	// Conversions Load
-
-
-	// Show Values Load
-
-	/* END START ===================================== */
-
-
-	/* Metrics Dropdown Selection ======================= */
+	/* Selections ======================================= */
 	var selections = [
 					 	"Impressions",
 					 	"Outbound Clicks",
@@ -43,20 +29,34 @@ $(document).ready(function() {
 					 	"spent",
 					 	"roas"
 					 ];
+	/* End Selections =================================== */
 
-	function addColumnSelection(amt) {
+
+	/* START ============================================ */
+	// Metrics Load
+	addMetricColumn(12);
+	addSelections(".col");
+	resetMetrics();
+
+	// Conversions Load
+	addConversionColumn(9);
+	addSelections(".conv");
+
+
+	// Show Values Load
+
+	/* END START ======================================== */
+
+
+	/* Metrics Functions ================================ */
+	function addMetricColumn(amt) {
 		var curAmt = $(".column-container").length;
 		for (var i = curAmt + 1; i <= amt + curAmt; i++) {
 			$(".metric-options .inside").append(
-				"<div class='column-container column-container-" + i + "'>" +
+				"<div class='cont column-container column-container-" + i + "'>" +
 					"<label for='column-" + i + "'>Column " + i + ":</label> " +
 					"<select class='col column-" + i + "' name='column-" + i + "' id='column-" + i + "'></select>" +
 				"</div>");
-		}
-	}
-	function addSelections() {
-		for (var i = 0; i <= selections.length - 1; i++) {
-			$(".col").append("<option value='" + selection_values[i] + "'>" + selections[i] + "</option>");
 		}
 	}
 	function resetMetrics() {
@@ -73,22 +73,70 @@ $(document).ready(function() {
 		$(".column-11").val("spent");
 		$(".column-12").val("roas");
 	}
-	/* End Metrics Dropdown Selection =================== */
+	/* End Metrics Functions ============================ */
+
+	/* Conversions Functions ============================ */
+	function addConversionColumn(amt) {
+		var curAmt = $(".conversion-container").length;
+		for (var i = curAmt + 1; i <= amt + curAmt; i++) {
+			$(".conversion-options .inside").append(
+				"<div class='cont conversion-container'>" +
+					"<span>Conversion " + i + ": </span>" +
+					"<select class='conv conv-" + i + "-1' name='conv-" + i + "-1' id='conv-" + i + "-1'></select>" +
+					"<span> &gt; </span>" +
+					"<select class='conv conv-" + i + "-2' name='conv-" + i + "-2' id='conv-" + i + "-2'></select>" +
+				"</div>");
+		}
+	}
+	function resetConversions() {
+		$(".conv-1-1").val("imp");
+		$(".conv-1-2").val("imp");
+		
+		$(".conv-2-1").val("click");
+		$(".conv-2-2").val("click");
+
+		$(".conv-3-1").val("lpv");
+		$(".conv-3-2").val("lpv");
+
+		$(".conv-4-1").val("vc");
+		$(".conv-4-2").val("vc");
+
+		$(".conv-5-1").val("atc");
+		$(".conv-5-2").val("atc");
+
+		$(".conv-6-1").val("ic");
+		$(".conv-6-2").val("ic");
+
+		$(".conv-7-1").val("pi");
+		$(".conv-7-2").val("pi");
+
+		$(".conv-8-1").val("pur");
+		$(".conv-8-2").val("pur");
+
+		$(".conv-9-1").val("cpm");
+		$(".conv-9-2").val("cpm");
+
+		$(".conv-10-1").val("purconv");
+		$(".conv-10-2").val("purconv");
+
+		$(".conv-11-1").val("spent");
+		$(".conv-12-2").val("spent");
+
+		$(".conv-12-1").val("roas");
+		$(".conv-12-2").val("roas");
+	}
+	/* End Conversions Functions ============================ */
 
 
-	/* Conversions Dropdown Selection =================== */
-	
-	/* End Conversions Dropdown Selection =============== */
+	/* Show Values Functions ============================ */
 
-
-	/* Show Values Dropdown Selection =================== */
-	
-	/* End Show Values Dropdown Selection =============== */
+	/* End Show Values Functions ============================ */
 
 
 	/* Metrics Options Options ========================== */
 	$("#metric-add").click(function() {
-		addColumnSelection(1);
+		addMetricColumn(1);
+
 		for (var i = 0; i <= selections.length - 1; i++) {
 			$(".metric-options .inside .column-container:last-child .col").append("<option value='" + selection_values[i] + "'>" + selections[i] + "</option>");
 		}
@@ -102,8 +150,8 @@ $(document).ready(function() {
 	});
 	$("#metric-defaults").click(function() {
 		$(".metric-options .inside").empty();
-		addColumnSelection(12);
-		addSelections();
+		addMetricColumn(12);
+		addMetricSelections();
 		resetMetrics();
 
 		return false;
@@ -128,7 +176,18 @@ $(document).ready(function() {
 
 
 	/* Show Values Options Options ====================== */
-	
+	$("#sval-add").click(function() {
+
+		return false;
+	});
+	$("#sval-remove").click(function() {
+
+		return false;
+	});
+	$("#sval-defaults").click(function() {
+
+		return false;
+	});
 	/* End Show Values Options Options ================== */
 
 
@@ -138,5 +197,15 @@ $(document).ready(function() {
 		return false;
 	});
 	/* End Conversion Process =========================== */
+
+
+
+	/* Add Selections =================================== */
+	function addSelections(target) {
+		for (var i = 0; i <= selections.length - 1; i++) {
+			$(target).append("<option value='" + selection_values[i] + "'>" + selections[i] + "</option>");
+		}
+	}
+	/* End Add Selections =============================== */
 
 });
