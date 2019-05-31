@@ -127,7 +127,8 @@ h2 {
 }
 
 select {
-	width: 12em;
+	width: 11em;
+	font-family: sans-serif;
 }
 
 

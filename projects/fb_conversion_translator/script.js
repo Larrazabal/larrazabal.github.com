@@ -225,7 +225,6 @@ $(document).ready(function() {
 	/* End Conversion Process =========================== */
 
 
-
 	/* Add Selections =================================== */
 	function addSelections(target) {
 		for (var i = 0; i <= selections.length - 1; i++) {
