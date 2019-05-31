@@ -2,9 +2,6 @@ $(document).ready(function() {
 
 	/* START Selections ======================================= */
 	var selections = [
-					 ];
-	/* End Selections =================================== */
-
 						{
 							"title": "Impressions",
 							"id": "imp"
