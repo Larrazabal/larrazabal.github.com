@@ -87,7 +87,7 @@ $(document).ready(function() {
 		var curAmt = $(".conversion-container").length;
 		for (var i = curAmt + 1; i <= amt + curAmt; i++) {
 			$(".conversion-options .inside").append(
-				"<div class='cont conversion-container'>" +
+				"<div class='cont conversion-container conversion-container-" + i + "'>" +
 					"<span>Conversion " + i + ": </span>" +
 					"<select class='conv conv-" + i + "-1' name='conv-" + i + "-1' id='conv-" + i + "-1'></select>" +
 					"<span> &gt; </span>" +
@@ -131,7 +131,7 @@ $(document).ready(function() {
 		var curAmt = $(".sval-container").length;
 		for (var i = curAmt + 1; i <= amt + curAmt; i++) {
 			$(".sval-options .inside").append(
-				"<div class='cont sval-container-" + i + "'>" +
+				"<div class='cont sval-container sval-container-" + i + "'>" +
 					"<label for='sval-" + i + "'>Value " + i + ":</label> " +
 					"<select class='sval sval-" + i + "' name='sval-" + i + "' id='sval-" + i + "'></select>" +
 				"</div>");
@@ -142,8 +142,8 @@ $(document).ready(function() {
 		$(".sval-2").val("cpr");
 		$(".sval-3").val("pur");
 		$(".sval-4").val("purconv");
-		$(".sval-5").val("atc");
-		$(".sval-6").val("ic");
+		$(".sval-5").val("spend");
+		$(".sval-6").val("roas");
 	}
 	/* End Show Values Functions ============================ */
 
@@ -196,14 +196,21 @@ $(document).ready(function() {
 
 	/* Show Values Options Options ====================== */
 	$("#sval-add").click(function() {
+		addSvalColumn(1);
+		addSelections(".sval-options .inside .sval-container:last-child .sval");
 
 		return false;
 	});
 	$("#sval-remove").click(function() {
+		$(".sval-options .inside .sval-container:last-child").remove();
 
 		return false;
 	});
 	$("#sval-defaults").click(function() {
+		$(".sval-options .inside").empty();
+		addSvalColumn(6);
+		addSelections(".sval");
+		resetSval();
 
 		return false;
 	});
