@@ -130,7 +130,12 @@ select {
 	width: 11em;
 	font-family: sans-serif;
 }
-
+.output td {
+	border: 1px solid #9f9f9f;
+}
+.output thead td {
+	font-weight: 700;
+}
 
 .clearfix{clear:both!important;}
 .no-read{speak:none;}

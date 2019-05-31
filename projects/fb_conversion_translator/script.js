@@ -1,60 +1,90 @@
 $(document).ready(function() {
 
-	/* Selections ======================================= */
+	/* START Selections ======================================= */
 	var selections = [
-					 	"Impressions",
-					 	"CPM",
-					 	"Cost/1000 People Reached",
-					 	"Outbound Clicks",
-					 	"Landing Page Views",
-					 	"View Content",
-					 	"Adds to Cart",
-					 	"Initiate Checkouts",
-					 	"Purchase Information",
-					 	"Purchases",
-					 	"Purchase Conversion",
-					 	"Amount Spent",
-					 	"ROAS"
-					 ];
-	var selection_values = [
-					 	"imp",
-					 	"cpm",
-					 	"cpr",
-					 	"click",
-					 	"lpv",
-					 	"vc",
-					 	"atc",
-					 	"ic",
-					 	"pi",
-					 	"pur",
-					 	"purconv",
-					 	"spend",
-					 	"roas"
 					 ];
 	/* End Selections =================================== */
 
+						{
+							"title": "Impressions",
+							"id": "imp"
+						},
+						{
+							"title": "CPM",
+							"id": "cpm"
+						},
+						{
+							"title": "Cost/1000 People Reached",
+							"id": "cpr"
+						},
+						{
+							"title": "Outbound Clicks",
+							"id": "click"
+						},
+						{
+							"title": "Landing Page Views",
+							"id": "lpv"
+						},
+						{
+							"title": "View Content",
+							"id": "vc"
+						},
+						{
+							"title": "Adds to Cart",
+							"id": "atc"
+						},
+						{
+							"title": "Initiate Checkouts",
+							"id": "ic"
+						},
+						{
+							"title": "Purchase Information",
+							"id": "pi"
+						},
+						{
+							"title": "Purchases",
+							"id": "pur"
+						},
+						{
+							"title": "Purchase Conversion",
+							"id": "purconv"
+						},
+						{
+							"title": "Amount Spent",
+							"id": "spend"
+						},
+						{
+							"title": "ROAS",
+							"id": "roas"
+						}
+					];
+	/* END Selections =================================== */
 
-	/* START ============================================ */
+
+	/* START START ============================================ */
 	// Metrics Load
-	addMetricColumn(13);
+	var defMetric = 13;
+	addMetricColumn(defMetric);
 	addSelections(".col");
 	resetMetrics();
 
 	// Conversions Load
-	addConversionColumn(9);
+	var defConv = 9;
+	addConversionColumn(defConv);
 	addSelections(".conv");
 	resetConversions();
 
 
 	// Show Values Load
-	addSvalColumn(6);
+	var defSval = 6;
+	addSvalColumn(defSval);
 	addSelections(".sval");
 	resetSval();
 
 	/* END START ======================================== */
 
 
-	/* Metrics Functions ================================ */
+	/* START Metrics Functions ================================ */
 	function addMetricColumn(amt) {
 		var curAmt = $(".column-container").length;
 		for (var i = curAmt + 1; i <= amt + curAmt; i++) {
@@ -80,9 +110,9 @@ $(document).ready(function() {
 		$(".column-12").val("spend");
 		$(".column-13").val("roas");
 	}
-	/* End Metrics Functions ============================ */
+	/* END Metrics Functions ============================ */
 
-	/* Conversions Functions ============================ */
+	/* START Conversions Functions ============================ */
 	function addConversionColumn(amt) {
 		var curAmt = $(".conversion-container").length;
 		for (var i = curAmt + 1; i <= amt + curAmt; i++) {
@@ -123,10 +153,10 @@ $(document).ready(function() {
 		$(".conv-9-1").val("lpv");
 		$(".conv-9-2").val("vc");
 	}
-	/* End Conversions Functions ============================ */
+	/* END Conversions Functions ============================ */
 
 
-	/* Show Values Functions ============================ */
+	/* START Show Values Functions ============================ */
 	function addSvalColumn(amt) {
 		var curAmt = $(".sval-container").length;
 		for (var i = curAmt + 1; i <= amt + curAmt; i++) {
@@ -145,10 +175,10 @@ $(document).ready(function() {
 		$(".sval-5").val("spend");
 		$(".sval-6").val("roas");
 	}
-	/* End Show Values Functions ============================ */
+	/* END Show Values Functions ============================ */
 
 
-	/* Metrics Options Options ========================== */
+	/* START Metrics Options Options ========================== */
 	$("#metric-add").click(function() {
 		addMetricColumn(1);
 		addSelections(".metric-options .inside .column-container:last-child .col");
@@ -162,16 +192,16 @@ $(document).ready(function() {
 	});
 	$("#metric-defaults").click(function() {
 		$(".metric-options .inside").empty();
-		addMetricColumn(13);
+		addMetricColumn(defMetric);
 		addSelections(".col");
 		resetMetrics();
 
 		return false;
 	});
-	/* End Metrics Options Options ====================== */
+	/* END Metrics Options Options ====================== */
 
 
-	/* Converion Options Options ======================== */
+	/* START Converion Options Options ======================== */
 	$("#conversions-add").click(function() {
 		addConversionColumn(1);
 		addSelections(".conversion-options .inside .conversion-container:last-child .conv");
@@ -185,16 +215,16 @@ $(document).ready(function() {
 	});
 	$("#conversions-defaults").click(function() {
 		$(".conversion-options .inside").empty();
-		addConversionColumn(9);
+		addConversionColumn(defConv);
 		addSelections(".conv");
 		resetConversions();
 
 		return false;
 	});
-	/* End Converion Options Options ==================== */
+	/* END Converion Options Options ==================== */
 
 
-	/* Show Values Options Options ====================== */
+	/* START Show Values Options Options ====================== */
 	$("#sval-add").click(function() {
 		addSvalColumn(1);
 		addSelections(".sval-options .inside .sval-container:last-child .sval");
@@ -208,29 +238,96 @@ $(document).ready(function() {
 	});
 	$("#sval-defaults").click(function() {
 		$(".sval-options .inside").empty();
-		addSvalColumn(6);
+		addSvalColumn(defSval);
 		addSelections(".sval");
 		resetSval();
 
 		return false;
 	});
-	/* End Show Values Options Options ================== */
+	/* END Show Values Options Options ================== */
 
 
-	/* Conversion Process =============================== */
+	/* START Conversion Process =============================== */
 	$(".convert").click(function() {
 
 		return false;
 	});
-	/* End Conversion Process =========================== */
+	/* END Conversion Process =========================== */
 
 
-	/* Add Selections =================================== */
+	/* START Add Selections =================================== */
 	function addSelections(target) {
 		for (var i = 0; i <= selections.length - 1; i++) {
-			$(target).append("<option value='" + selection_values[i] + "'>" + selections[i] + "</option>");
+			$(target).append("<option value='" + selections[i].id + "'>" + selections[i].title + "</option>");
 		}
 	}
-	/* End Add Selections =============================== */
+	/* END Add Selections =============================== */
+
+
+	/* CONVERSION ======================================= */
+
+	$(".convert").click(function() {
+
+		// GET DATA
+		var inputData = $(".input").val();
+
+		// SPLIT INPUT BY LINE INTO ARRAY
+		inputData = inputData.split(/\n/);
+
+		// ROW COUNT
+		inputSize = inputData.length;
+
+		// SPLIT EACH ARRAY BY TAB
+		for (var i = 0; i <= inputSize - 1; i++) {
+			inputData[i] = inputData[i].split(/\t/);
+		}
+
+		// GET SELECTED METRICS
+		var metricAmt = $(".column-container").length;
+		var metricsSelected = [];
+		for (var i = 1; i <= metricAmt; i++) {
+			metricsSelected[i-1] = $(".column-" + i).val();
+		}
+
+		// GET ALT VALUES FOR METRICS
+		var metricsSelectedAlt = [];
+		for (var i = 0; i < metricAmt; i++) {
+			var x;
+			for (x = 0; x < metricAmt; x++) {
+				if (metricsSelected[i] == selections[x].id) {
+					break;
+				}
+			}
+			metricsSelectedAlt.push(selections[x].title);
+		}
+
+		// CLEAR OUTPUT
+		$(".output thead").empty();
+		$(".output tbody").empty();
+
+		// WRITE ON OUTPUT TABLE HEAD
+		$(".output thead").append("<td>Name</td>");
+		for (var i = 0; i < metricAmt; i++) {
+			$(".output thead").append("<td>" + metricsSelectedAlt[i] + "</td>");
+		}
+
+
+		// WRITE ON OUTPUT TABLE BODY
+		$(".output tbody").append();
+		var outputTableString = "";
+		for (var i = 0; i < inputSize; i++) {
+			outputTableString += "<tr>"
+			for (var x = 0; x <= metricAmt; x++) {
+				outputTableString += "<td>" + inputData[i][x] + "</td>";
+			}
+			outputTableString += "</tr>"
+		}
+		$(".output tbody").append(outputTableString);
+
+		// SHOW OUTPUT
+		$(".output-container").show();
+	});
+
+	/* END CONVERSION =================================== */
 
 });
