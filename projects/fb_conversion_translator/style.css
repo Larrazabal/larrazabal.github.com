@@ -126,6 +126,10 @@ h2 {
 	width: 33.33%;
 }
 
+select {
+	width: 12em;
+}
+
 
 .clearfix{clear:both!important;}
 .no-read{speak:none;}

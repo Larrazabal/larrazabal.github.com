@@ -3,6 +3,8 @@ $(document).ready(function() {
 	/* Selections ======================================= */
 	var selections = [
 					 	"Impressions",
+					 	"CPM",
+					 	"Cost/1000 People Reached",
 					 	"Outbound Clicks",
 					 	"Landing Page Views",
 					 	"View Content",
@@ -10,13 +12,14 @@ $(document).ready(function() {
 					 	"Initiate Checkouts",
 					 	"Purchase Information",
 					 	"Purchases",
-					 	"CPM",
 					 	"Purchase Conversion",
 					 	"Amount Spent",
 					 	"ROAS"
 					 ];
 	var selection_values = [
 					 	"imp",
+					 	"cpm",
+					 	"cpr",
 					 	"click",
 					 	"lpv",
 					 	"vc",
@@ -24,9 +27,8 @@ $(document).ready(function() {
 					 	"ic",
 					 	"pi",
 					 	"pur",
-					 	"cpm",
 					 	"purconv",
-					 	"spent",
+					 	"spend",
 					 	"roas"
 					 ];
 	/* End Selections =================================== */
@@ -34,7 +36,7 @@ $(document).ready(function() {
 
 	/* START ============================================ */
 	// Metrics Load
-	addMetricColumn(12);
+	addMetricColumn(13);
 	addSelections(".col");
 	resetMetrics();
 
@@ -45,6 +47,9 @@ $(document).ready(function() {
 
 
 	// Show Values Load
+	addSvalColumn(6);
+	addSelections(".sval");
+	resetSval();
 
 	/* END START ======================================== */
 
@@ -62,17 +67,18 @@ $(document).ready(function() {
 	}
 	function resetMetrics() {
 		$(".column-1").val("imp");
-		$(".column-2").val("click");
-		$(".column-3").val("lpv");
-		$(".column-4").val("vc");
-		$(".column-5").val("atc");
-		$(".column-6").val("ic");
-		$(".column-7").val("pi");
-		$(".column-8").val("pur");
-		$(".column-9").val("cpm");
-		$(".column-10").val("purconv");
-		$(".column-11").val("spent");
-		$(".column-12").val("roas");
+		$(".column-2").val("cpm");
+		$(".column-3").val("cpr");
+		$(".column-4").val("click");
+		$(".column-5").val("lpv");
+		$(".column-6").val("vc");
+		$(".column-7").val("atc");
+		$(".column-8").val("ic");
+		$(".column-9").val("pi");
+		$(".column-10").val("pur");
+		$(".column-11").val("purconv");
+		$(".column-12").val("spend");
+		$(".column-13").val("roas");
 	}
 	/* End Metrics Functions ============================ */
 
@@ -122,16 +128,22 @@ $(document).ready(function() {
 
 	/* Show Values Functions ============================ */
 	function addSvalColumn(amt) {
-		var curAmt = $(".conversion-container").length;
+		var curAmt = $(".sval-container").length;
 		for (var i = curAmt + 1; i <= amt + curAmt; i++) {
-			$(".conversion-options .inside").append(
-				"<div class='cont conversion-container'>" +
-					"<span>Conversion " + i + ": </span>" +
-					"<select class='conv conv-" + i + "-1' name='conv-" + i + "-1' id='conv-" + i + "-1'></select>" +
-					"<span> &gt; </span>" +
-					"<select class='conv conv-" + i + "-2' name='conv-" + i + "-2' id='conv-" + i + "-2'></select>" +
+			$(".sval-options .inside").append(
+				"<div class='cont sval-container-" + i + "'>" +
+					"<label for='sval-" + i + "'>Value " + i + ":</label> " +
+					"<select class='sval sval-" + i + "' name='sval-" + i + "' id='sval-" + i + "'></select>" +
 				"</div>");
 		}
+	}
+	function resetSval() {
+		$(".sval-1").val("cpm");
+		$(".sval-2").val("cpr");
+		$(".sval-3").val("pur");
+		$(".sval-4").val("purconv");
+		$(".sval-5").val("atc");
+		$(".sval-6").val("ic");
 	}
 	/* End Show Values Functions ============================ */
 
@@ -150,7 +162,7 @@ $(document).ready(function() {
 	});
 	$("#metric-defaults").click(function() {
 		$(".metric-options .inside").empty();
-		addMetricColumn(12);
+		addMetricColumn(13);
 		addSelections(".col");
 		resetMetrics();
 
