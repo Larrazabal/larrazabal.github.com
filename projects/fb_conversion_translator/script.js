@@ -2,59 +2,59 @@ $(document).ready(function() {
 
 	/* START Selections ======================================= */
 	var selections = [
-						{
-							"title": "Impressions",
-							"id": "imp"
-						},
-						{
-							"title": "CPM",
-							"id": "cpm"
-						},
-						{
-							"title": "Cost/1000 People Reached",
-							"id": "cpr"
-						},
-						{
-							"title": "Outbound Clicks",
-							"id": "click"
-						},
-						{
-							"title": "Landing Page Views",
-							"id": "lpv"
-						},
-						{
-							"title": "View Content",
-							"id": "vc"
-						},
-						{
-							"title": "Adds to Cart",
-							"id": "atc"
-						},
-						{
-							"title": "Initiate Checkouts",
-							"id": "ic"
-						},
-						{
-							"title": "Purchase Information",
-							"id": "pi"
-						},
-						{
-							"title": "Purchases",
-							"id": "pur"
-						},
-						{
-							"title": "Purchase Conversion",
-							"id": "purconv"
-						},
-						{
-							"title": "Amount Spent",
-							"id": "spend"
-						},
-						{
-							"title": "ROAS",
-							"id": "roas"
-						}
-					];
+		{
+			"title": "Impressions",
+			"id": "imp"
+		},
+		{
+			"title": "CPM",
+			"id": "cpm"
+		},
+		{
+			"title": "Cost/1000 People Reached",
+			"id": "cpr"
+		},
+		{
+			"title": "Outbound Clicks",
+			"id": "click"
+		},
+		{
+			"title": "Landing Page Views",
+			"id": "lpv"
+		},
+		{
+			"title": "View Content",
+			"id": "vc"
+		},
+		{
+			"title": "Adds to Cart",
+			"id": "atc"
+		},
+		{
+			"title": "Initiate Checkouts",
+			"id": "ic"
+		},
+		{
+			"title": "Purchase Information",
+			"id": "pi"
+		},
+		{
+			"title": "Purchases",
+			"id": "pur"
+		},
+		{
+			"title": "Purchase Conversion",
+			"id": "purconv"
+		},
+		{
+			"title": "Amount Spent",
+			"id": "spend"
+		},
+		{
+			"title": "ROAS",
+			"id": "roas"
+		}
+	];
 	/* END Selections =================================== */
 
 
@@ -286,18 +286,6 @@ $(document).ready(function() {
 			metricsSelected[i-1] = $(".column-" + i).val();
 		}
 
-		// GET ALT VALUES FOR METRICS
-		var metricsSelectedAlt = [];
-		for (var i = 0; i < metricAmt; i++) {
-			var x;
-			for (x = 0; x < metricAmt; x++) {
-				if (metricsSelected[i] == selections[x].id) {
-					break;
-				}
-			}
-			metricsSelectedAlt.push(selections[x].title);
-		}
-
 		// CLEAR OUTPUT
 		$(".output thead").empty();
 		$(".output tbody").empty();
@@ -305,15 +293,14 @@ $(document).ready(function() {
 		// WRITE ON OUTPUT TABLE HEAD
 		$(".output thead").append("<td>Name</td>");
 		for (var i = 0; i < metricAmt; i++) {
-			$(".output thead").append("<td>" + metricsSelectedAlt[i] + "</td>");
+			$(".output thead").append("<td>" + convertToTitle(metricsSelected[i]) + "</td>");
 		}
-
 
 		// WRITE ON OUTPUT TABLE BODY
 		$(".output tbody").append();
 		var outputTableString = "";
 		for (var i = 0; i < inputSize; i++) {
-			outputTableString += "<tr>"
+			outputTableString += "<tr class='output-row-" + (i + 1) + "'>"
 			for (var x = 0; x <= metricAmt; x++) {
 				outputTableString += "<td>" + inputData[i][x] + "</td>";
 			}
@@ -323,8 +310,66 @@ $(document).ready(function() {
 
 		// SHOW OUTPUT
 		$(".output-container").show();
+
+		// GET SELECTED CONVERSIONS
+		var conversionAmt = $(".conversion-container").length;
+		var conversionsSelected = [];
+		for (var i = 1; i <= conversionAmt; i++) {
+			conversionsSelected.push({
+				"from": $(".conv-" + i + "-1").val(),
+				"to": $(".conv-" + i + "-2").val()
+			});
+		}
+
+		// OUTPUT CONVERSIONS TO TABLE
+		$(".output-conversions-container").empty();
+		for (var y = 0; y < inputSize; y++) {
+			$(".output-conversions-container").append("<table class='output-conversions output-conversions-" + (y + 1) + "''><thead></thead><tbody></tbody></table>");
+			
+			var headerString = "";
+			headerString += "<tr>";
+			headerString += "<td colspan='3'>" + inputData[y][0] + " Conversions</td>";
+			headerString += "<td>" + "Percentage" + "</td>";
+			headerString += "</tr>";
+			$(".output-conversions-" + (y + 1) + " thead").append(headerString);
+			
+			for (var i = 0; i < conversionAmt; i++) {
+				var conversionString = "";
+				conversionString += "<tr>";
+				conversionString += "<td>" + convertToTitle(conversionsSelected[i].from) + "</td>";
+				conversionString += "<td rowspan='2' class='tcent'>" + " &gt; " + "</td>";
+				conversionString += "<td>" + convertToTitle(conversionsSelected[i].to) + "</td>";
+				conversionString += "<td rowspan='2' class='tcent'>" +  + "</td>";
+				conversionString += "</tr>";
+
+				conversionString += "<tr>";
+				conversionString += "<td>" + convertToVal(conversionsSelected[i].from, y) + "</td>";
+				conversionString += "<td>" + convertToVal(conversionsSelected[i].to, y) + "</td>";
+				conversionString += "</tr>";
+
+				$(".output-conversions-" + (y + 1) + " tbody").append(conversionString);
+			}
+		}
 	});
 
 	/* END CONVERSION =================================== */
+
+	function convertToVal(enterID, rowNum) {
+		console.log(enterID + " | " + rowNum);
+	}
+	function convertToTitle(ID) {
+		var IDloc;
+		var IDnew;
+		for (var i = 0; i < selections.length; i++) {
+			if (ID == selections[i].id) {
+				IDloc = i;
+				break;
+			}
+		}
+		IDnew = selections[IDloc].title;
+		return IDnew;
+	}
+
+	convertToTitle("pur");
 
 });

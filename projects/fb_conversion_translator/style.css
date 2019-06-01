@@ -130,11 +130,19 @@ select {
 	width: 11em;
 	font-family: sans-serif;
 }
-.output td {
+.output-container td {
 	border: 1px solid #9f9f9f;
 }
-.output thead td {
-	font-weight: 700;
+.output-container thead td {
+	font-weight: 900;
+	text-align: center;
+}
+.output-conversions {
+	margin-top: 1em;
+}
+.tcent {
+	text-align: center;
+	vertical-align: middle;
 }
 
 .clearfix{clear:both!important;}
