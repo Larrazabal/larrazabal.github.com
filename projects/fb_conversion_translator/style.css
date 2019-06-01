@@ -141,7 +141,8 @@ select {
 .output-container strong {
 	font-weight: 700;
 }
-.output-conversions {
+.output-conversions,
+.output-sval {
 	margin-top: 1em;
 }
 .tcent {

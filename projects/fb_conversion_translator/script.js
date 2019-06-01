@@ -314,17 +314,17 @@ $(document).ready(function() {
 			});
 		}
 
-		// OUTPUT CONVERSIONS TO TABLE
+		// OUTPUT CONVERSIONS TO TABLES
 		$(".output-conversions-container").empty();
 		for (var y = 0; y < inputSize; y++) {
 			$(".output-conversions-container").append("<table class='output-conversions output-conversions-" + (y + 1) + "''><thead></thead><tbody></tbody></table>");
-			
-			var headerString = "";
-			headerString += "<tr>";
-			headerString += "<td colspan='3'>" + inputData[y][0] + " Conversions</td>";
-			headerString += "<td>" + "Percentage" + "</td>";
-			headerString += "</tr>";
-			$(".output-conversions-" + (y + 1) + " thead").append(headerString);
+
+			var conversionHeaderString = "";
+			conversionHeaderString += "<tr>";
+			conversionHeaderString += "<td colspan='3'>" + inputData[y][0] + " Conversions</td>";
+			conversionHeaderString += "<td>" + "Percentage" + "</td>";
+			conversionHeaderString += "</tr>";
+			$(".output-conversions-" + (y + 1) + " thead").append(conversionHeaderString);
 
 			for (var i = 0; i < conversionAmt; i++) {
 				var conversionString = "";
@@ -347,28 +347,50 @@ $(document).ready(function() {
 			}
 		}
 
+		// OUTPUT SHOW VALUES TO TABLES
+		$(".output-sval-container").empty();
+		var svalAmt = $(".sval-container").length;
+		for (var y = 1; y <= inputSize; y++) {
+			$(".output-sval-container").append("<table class='output-sval output-sval-" + y + "''><thead></thead><tbody></tbody></table>");
+		
+			var svalHeaderString = "<tr><td colspan='" + svalAmt + "'>" + inputData[y-1][0] + " Data</td></tr>";
+			svalHeaderString += "<tr>";
+			for (var i = 1; i <= svalAmt; i++) {
+				svalHeaderString += "<td>" + IDToTitle($(".sval-" + i).val()) + "</td>";
+			}
+			svalHeaderString += "</tr>";
+			$(".output-sval-" + y + " thead").append(svalHeaderString);
+
+			var svalString = "<tr>"
+			for (var i = 1; i <= svalAmt; i++) {
+				svalString += "<td>" + IDToVal($(".sval-" + i).val(), (y-1)) + "</td>";
+			}
+			svalString += "</tr>";
+			$(".output-sval-" + y + " tbody").append(svalString);
+		}
+		console.log(IDToVal($(".sval-6").val(), 0));
 		return false;
 	});
 
 	/* END CONVERSION =================================== */
 
-
-	/* Data Cpnversion ================================== */
+	/* Data Conversion ================================== */
 	function turnToNumber(input) {
 		input = input.replace(/,/g, "");
-		console.log(input);
 		return input;
 	}
+
 	function turnToPercentage(input) {
 		input = (input*100).toFixed(2);
 		input = input + "%";
 		return input;
 	}
+
 	function IDToVal(ID, rowNum) {
 		var cl = $(".column-container").length;
 		var IDlocInSelected;
 		var theValue;
-		for (var i = 0; i < cl; i++) {
+		for (var i = 0; i <= cl; i++) {
 			if (ID == $(".column-" + i).val()) {
 				theValue = inputData[rowNum][i];
 				break;
