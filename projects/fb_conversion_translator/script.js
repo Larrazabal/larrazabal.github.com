@@ -244,14 +244,6 @@ $(document).ready(function() {
 	/* END Show Values Options Options ================== */
 
 
-	/* START Conversion Process =============================== */
-	$(".convert").click(function() {
-
-		return false;
-	});
-	/* END Conversion Process =========================== */
-
-
 	/* START Add Selections =================================== */
 	function addSelections(target) {
 		for (var i = 0; i <= selections.length - 1; i++) {
@@ -263,10 +255,11 @@ $(document).ready(function() {
 
 	/* CONVERSION ======================================= */
 
+	var inputData;
 	$(".convert").click(function() {
 
 		// GET DATA
-		var inputData = $(".input").val();
+		inputData = $(".input").val();
 
 		// SPLIT INPUT BY LINE INTO ARRAY
 		inputData = inputData.split(/\n/);
@@ -293,7 +286,7 @@ $(document).ready(function() {
 		// WRITE ON OUTPUT TABLE HEAD
 		$(".output thead").append("<td>Name</td>");
 		for (var i = 0; i < metricAmt; i++) {
-			$(".output thead").append("<td>" + convertToTitle(metricsSelected[i]) + "</td>");
+			$(".output thead").append("<td>" + IDToTitle(metricsSelected[i]) + "</td>");
 		}
 
 		// WRITE ON OUTPUT TABLE BODY
@@ -332,44 +325,72 @@ $(document).ready(function() {
 			headerString += "<td>" + "Percentage" + "</td>";
 			headerString += "</tr>";
 			$(".output-conversions-" + (y + 1) + " thead").append(headerString);
-			
+
 			for (var i = 0; i < conversionAmt; i++) {
 				var conversionString = "";
 				conversionString += "<tr>";
-				conversionString += "<td>" + convertToTitle(conversionsSelected[i].from) + "</td>";
-				conversionString += "<td rowspan='2' class='tcent'>" + " &gt; " + "</td>";
-				conversionString += "<td>" + convertToTitle(conversionsSelected[i].to) + "</td>";
-				conversionString += "<td rowspan='2' class='tcent'>" +  + "</td>";
+				conversionString += "<td><strong>" + IDToTitle(conversionsSelected[i].from) + "</strong></td>";
+				conversionString += "<td rowspan='2' class='tcent tarrow'>" + " &gt; " + "</td>";
+				conversionString += "<td><strong>" + IDToTitle(conversionsSelected[i].to) + "</strong></td>";
+				conversionString += "<td rowspan='2' class='tcent'>" +
+									turnToPercentage((turnToNumber(IDToVal(conversionsSelected[i].to, (y)))) /
+									(turnToNumber(IDToVal(conversionsSelected[i].from, (y))))) +
+									"</td>";
 				conversionString += "</tr>";
 
 				conversionString += "<tr>";
-				conversionString += "<td>" + convertToVal(conversionsSelected[i].from, y) + "</td>";
-				conversionString += "<td>" + convertToVal(conversionsSelected[i].to, y) + "</td>";
+				conversionString += "<td>" + IDToVal(conversionsSelected[i].from, (y)) + "</td>";
+				conversionString += "<td>" + IDToVal(conversionsSelected[i].to, (y)) + "</td>";
 				conversionString += "</tr>";
 
 				$(".output-conversions-" + (y + 1) + " tbody").append(conversionString);
 			}
 		}
+
+		return false;
 	});
 
 	/* END CONVERSION =================================== */
 
-	function convertToVal(enterID, rowNum) {
-		console.log(enterID + " | " + rowNum);
+
+	/* Data Cpnversion ================================== */
+	function turnToNumber(input) {
+		input = input.replace(/,/g, "");
+		console.log(input);
+		return input;
 	}
-	function convertToTitle(ID) {
+	function turnToPercentage(input) {
+		input = (input*100).toFixed(2);
+		input = input + "%";
+		return input;
+	}
+	function IDToVal(ID, rowNum) {
+		var cl = $(".column-container").length;
+		var IDlocInSelected;
+		var theValue;
+		for (var i = 0; i < cl; i++) {
+			if (ID == $(".column-" + i).val()) {
+				theValue = inputData[rowNum][i];
+				break;
+			}
+		}
+
+		return theValue;
+	}
+
+	function IDToTitle(ID) {
 		var IDloc;
-		var IDnew;
+		var theTitle;
 		for (var i = 0; i < selections.length; i++) {
 			if (ID == selections[i].id) {
 				IDloc = i;
 				break;
 			}
 		}
-		IDnew = selections[IDloc].title;
-		return IDnew;
-	}
+		theTitle = selections[IDloc].title;
 
-	convertToTitle("pur");
+		return theTitle;
+	}
+	/* END Data Conversion ============================== */
 
 });

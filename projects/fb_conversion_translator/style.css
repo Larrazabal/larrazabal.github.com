@@ -136,6 +136,10 @@ select {
 .output-container thead td {
 	font-weight: 900;
 	text-align: center;
+	text-decoration: underline;
+}
+.output-container strong {
+	font-weight: 700;
 }
 .output-conversions {
 	margin-top: 1em;
@@ -143,6 +147,9 @@ select {
 .tcent {
 	text-align: center;
 	vertical-align: middle;
+}
+.tarrow {
+	padding: 0 .5em;
 }
 
 .clearfix{clear:both!important;}
