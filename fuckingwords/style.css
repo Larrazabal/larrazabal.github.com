@@ -15,9 +15,11 @@ html,body,div,span,applet,object,iframe,a,abbr,acronym,address,big,cite,code,del
 body {
 	font-family: "Source Sans Pro", sans-serif;
 	color: #2d2d2d;
+	background: #FFFEF2;
+	overflow-y: scroll;
 }
 .wrap {
-	margin: 0 auto;
+	margin: 3em auto;
 	width: 960px;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -32,21 +34,61 @@ h1 {
 }
 h2 {
 	font-size: 3em;
-	font-weight: 900;
+	font-weight: 700;
 	text-align: center;
 	padding: 1em 0;
 }
+h3 {
+	font-size: 1.5em;
+	font-weight: 700;
+	text-align: center;
+}
 h2 span {
 	border-bottom: .15em solid #2d2d2d;
+	cursor: pointer;
 }
-.transitions {
+.loc {
+	page-break-after: always;
+}
+.inside {
+	padding: 1em 0;
+}
+.inside table td {
+	border: 1px solid #2d2d2d;
+	padding: .5em;
+}
+#transitions {
 	column-count: 3;
 	column-gap: 4em;
 	column-rule: 1px solid #2d2d2d;
 }
-.transitions p {
+#transitions p {
 	line-height: 1.5;
 	padding: .5em 0;
+	font-size: 1.25em;
+}
+#emotions table {
+	float: left;
+	font-size: 1.25em;
+	width: 45%;
+	margin: 0 2.5% 1em;
+}
+#emotions td {
+	vertical-align: middle;
+	text-align: center;
+	text-transform: uppercase;
+}
+.title-cell {
+	font-weight: 700;
+}
+#resources ol {
+	list-style-type: decimal;
+	line-height: 2;
+	font-size: 1.25em;
+	margin-left: 3em;
+}
+#resources strong {
+	font-weight: 700;
 }
 
 
